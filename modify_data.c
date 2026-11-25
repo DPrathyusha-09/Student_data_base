@@ -1,5 +1,3 @@
-
-
 #include "header.h"
 
 void modify_data(sll *ptr)

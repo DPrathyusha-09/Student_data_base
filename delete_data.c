@@ -5,7 +5,7 @@ void delete_data(sll **ptr)
 {
     sll *temp, *prev;
     int choice, sub_choice, count, target_roll = 0;
-    int roll, mode;
+    int mode;
     char name[20];
     float marks;
 
@@ -60,6 +60,7 @@ void delete_data(sll **ptr)
             target_roll = temp->rollno;
             count++;
         }
+
         temp = temp->next;
     }
 
@@ -122,8 +123,10 @@ void delete_data(sll **ptr)
                     printf("%d\t%s\t%.2f\n",
                            temp->rollno, temp->name, temp->marks);
                 }
+
                 count++;
             }
+
             temp = temp->next;
         }
 
@@ -140,6 +143,7 @@ void delete_data(sll **ptr)
     if (mode == 6)
     {
         temp = *ptr;
+
         while (temp != NULL && temp->rollno != target_roll)
             temp = temp->next;
 
@@ -171,15 +175,6 @@ void delete_data(sll **ptr)
         prev->next = temp->next;
 
     free(temp);
-
-    temp = *ptr;
-    roll = 1;
-
-    while (temp != NULL)
-    {
-        temp->rollno = roll++;
-        temp = temp->next;
-    }
 
     printf("Record deleted successfully\n");
 }
