@@ -31,7 +31,7 @@ void delete_data(sll **ptr)
     else if (choice == 2)
     {
         printf("Enter student name: ");
-        scanf("%19s", name);
+        scanf("%s", name);
         mode = 2;
     }
     else if (choice == 3)
